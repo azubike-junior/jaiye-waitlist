@@ -264,12 +264,6 @@ export default {
   width: 100%;
 }
 
-/* .waitlist-form {
-  margin: 5rem 4rem;
-  padding-top:5rem;
-  padding-left: 3rem;
-} */
-
 .waitlist-form {
   margin: 3rem 2rem;
   padding-top:5rem;
@@ -302,7 +296,7 @@ export default {
   border: solid 3px #6F0977;
   background: transparent;
   outline: none;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .footer-banner {
