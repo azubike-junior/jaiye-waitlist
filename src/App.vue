@@ -181,38 +181,38 @@ export default {
   padding: 0;
 }
 
-  .banner {
-      background-color: #000000;
-      background-image:  linear-gradient(rgba(0, 0, 0, 0.912), rgba(4, 1, 1, 0.7)), url('./assets/footer-banner.svg');
-      height: 100vh;
-  }
+.banner {
+    background-color: #000000;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.912), rgba(4, 1, 1, 0.7)), url('./assets/footer-banner.svg');
+    height: 100vh;
+}
 
 .banner-img {
-  height: 50%;
+  height: 40%;
 }
 
 .banner-img img {
   height: auto;
-  width: 70%;
+  width: 60%;
 }
 
 .banner-btn-2 {
-  margin-top: 2rem;
-  padding: 2.1rem 4.5rem;
+  margin-top: 1rem;
+  padding: 1.5rem 3rem;
   border-radius: 60px;
   border: none;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   background: #6F0977;
   font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   cursor: pointer;
-  width: 380px;
+  width: 250px;
 }
 
 .banner-btn {
   margin-top: 2rem;
-  padding: 2.1rem 4.5rem;
+  padding: 2rem 2rem;
   border-radius: 60px;
   border: none;
   color: #6F0977;
@@ -221,7 +221,7 @@ export default {
   font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   cursor: pointer;
-  width: 380px;
+  width: 320px;
 }
 
 .waitlist {
@@ -261,7 +261,7 @@ export default {
 
 .waitlist-img img {
   height: auto;
-  width: 120%;
+  width: 100%;
 }
 
 /* .waitlist-form {
@@ -271,20 +271,20 @@ export default {
 } */
 
 .waitlist-form {
-  margin: 5rem 4rem;
+  margin: 3rem 2rem;
   padding-top:5rem;
-  padding-left: 3rem;
+  /* padding-left: 3rem; */
   font-family: 'DM Sans', sans-serif;
-  font-size: 60px;
-  line-height: 42px;
+  font-size: 40px;
+  line-height: 32px;
 }
 .waitlist-title{
   font-family: 'DM Sans', sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   line-height: 52px;
 }
 .waitlist-para {
-   font-size: 30px;
+   font-size: 20px;
 }
 .waitlist-form  {
   font-family: 'DM Sans', sans-serif;
@@ -296,8 +296,8 @@ export default {
 }
 
 .input input {
-  width: 650px;
-  padding: 2.2rem 1rem;
+  width: 500px;
+  padding: 1.5rem 1rem;
   margin-bottom: 1rem;
   border: solid 3px #6F0977;
   background: transparent;
@@ -313,7 +313,7 @@ export default {
 
 .footer-info {
   padding-top: 1rem;
-  width: 800px;
+  width: 700px;
   text-align: center;
 
 }
@@ -321,16 +321,16 @@ export default {
 .footer-info p {
   text-align: center;
   color: #fff;
-  line-height: 59px;
-  font-size: 40px;
+  line-height: 49px;
+  font-size: 30px;
   font-family: 'DM Sans', sans-serif;
 }
 
 .icons img {
   padding-top: 2rem;
   padding-right: 4rem;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 
