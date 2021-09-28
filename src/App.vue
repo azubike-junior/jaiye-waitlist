@@ -106,8 +106,9 @@ export default {
           if(response.status === 200){
             this.modalOpen = true
             this.email = '';
-            this.firstname = '',
+            this.firstname = '';
             this.loading = false
+            this.successAction = ''
           }
         })
         .catch(e => {
