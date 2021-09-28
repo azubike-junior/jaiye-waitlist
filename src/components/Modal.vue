@@ -47,8 +47,8 @@ export default {
     
     .modal-content {
         padding: 48px 32px;
-        width: 690px; 
-        height: 484px;
+        width: 590px; 
+        height: 384px;
         border-radius: 15px;
         background: #6F0977;
         color: #fff;
@@ -70,7 +70,7 @@ export default {
     }
     
     .modal-content {
-        margin: 0 2rem;
+        margin-right: 1rem;
         padding: 48px 32px;
         width: 100%; 
         height: auto;

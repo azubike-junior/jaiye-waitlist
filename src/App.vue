@@ -79,7 +79,7 @@ export default {
       nameError: '',
       successAction: '',
       loading: false,
-      modalOpen: true
+      modalOpen: false
     }
   },
   components: {
@@ -150,6 +150,16 @@ export default {
   transform: translateX(-700px);
 }
 
+/* // animated modal */
+.success-enter-active,
+.success-leave-active {
+  transition: 0.8s ease all;
+}
+
+.success-enter-from,
+.success-leave-to {
+  transform: translateY(-500px)
+}
 
 .flex {
   display: flex;
