@@ -1,26 +1,21 @@
 <template>
+  <div class="app">
     <div class="banner">
       <div class="banner-logo flex flex-column item-center"><img src="./assets/jaiye-logo.svg" alt=""></div>
       <div class="flex flex-column item-center banner-img"><img src="./assets/pic.svg" alt=""></div>
       <div class="flex flex-column item-center"><button class="banner-btn" @click="scrollToView"> Let's start the party</button></div>
     </div>
+
+  <transition name="modal">
+    <Modal :toggleModal="toggleModal" v-if="modalOpen"/>
+  </transition>
+
   <div class="waitlist flex">
     <div class="waitlist-img">
       <img src="./assets/banner-img-2.svg" alt="">
     </div>
 
-    <div v-if="successResponse" class="waitlist-form">
-      <transition-group name="success">
-      <h1 class="success-title">you've been added to our waitlist</h1>
-      <p class="success-info">We are building the future of recreation and entertainment, one flex at a time.</p>
-      <div class="btn flex flex-column item-center">
-           <button type="submit" class="banner-btn-2" @click="goBack" style="background:#6F0977; color: #fff">Go back</button>
-      </div>
-      </transition-group>
-    </div>
-
-    <div v-else class="waitlist-form" id="scrollToMe" ref="scrollToMe">
-     
+    <div  class="waitlist-form" id="scrollToMe" ref="scrollToMe">
       <span class="waitlist-title">Join our Waitlist</span>
       <p class="waitlist-para">and be the first to know when we launch</p>
       <transition-group name="form">
@@ -49,7 +44,7 @@
       <div class="footer-info">
         <p>
           Jaiyé is a lifestyle and entertainment sourcing platform that provides upscale
-          event management services to young millennials in Nigerians.
+          event management services to young millennials in Nigeria.
         </p>
          <p>
            We are building the future of recreation and entertainment, one flex at a time.
@@ -60,18 +55,19 @@
          </p>
 
          <div class="flex item-center icons">
-         <img src="./assets/Group.svg" alt="">
+        <router-link to="https://instagram.com/jaiye.ng?utm_medium=copy_link"><img src="./assets/Group.svg" alt=""> </router-link>
          <img src="./assets/Vector.svg" alt="">
          <img src="./assets/icon1.svg" alt="">
        </div>
 
        </div>
+    </div>
   </div>
-   <router-view> </router-view>
 </template>
 
 <script>
 import axios from 'axios'
+import Modal from './components/Modal.vue'
 
 export default {
   name: 'App',
@@ -83,18 +79,11 @@ export default {
       nameError: '',
       successAction: '',
       loading: false,
-      successResponse: false,
-      images: [
-        {
-          id: 0,
-          url: "./assets/banner-img-2.svg"
-        },
-        {
-          url: 1,
-          somet: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/Rectangle 1.svg')"
-        },
-      ] 
+      modalOpen: true
     }
+  },
+  components: {
+    Modal
   },
   methods: {
     async submitForm(){
@@ -115,7 +104,10 @@ export default {
           email: this.email
         }).then(response => {
           if(response.status === 200){
-            this.successResponse = true
+            this.modalOpen = true
+            this.email = '';
+            this.firstname = '',
+            this.loading = false
           }
         })
         .catch(e => {
@@ -131,8 +123,8 @@ export default {
         el.scrollIntoView({behavior: 'smooth'});
       }
     },
-    goBack () {
-      this.successResponse = false
+    toggleModal(){
+      this.modalOpen = !this.modalOpen
     }
   }
 }
@@ -141,27 +133,23 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
+.app {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
 /* transitions */
-.form-enter-active,
-.form-leave-active {
+.modal-enter-active,
+.modal-leave-active {
   transition: 0.8s ease all;
 }
 
-.form-enter-from,
-.form-leave-to {
+.modal-enter-from,
+.modal-leave-to {
   transform: translateX(-700px);
 }
 
-/* // animated modal */
-.success-enter-active,
-.success-leave-active {
-  transition: 0.8s ease all;
-}
-
-.success-enter-from,
-.success-leave-to {
-  transform: translateY(-500px)
-}
 
 .flex {
   display: flex;
@@ -174,11 +162,6 @@ export default {
 .item-center {
   justify-content: center;
   align-items: center;
-}
-
-#app {
-  margin: 0;
-  padding: 0;
 }
 
 .banner {
@@ -256,7 +239,7 @@ export default {
 
 .waitlist-img {
   margin: 4rem 1rem;
-  padding-right: 5rem;
+  padding-right: 7rem;
 }
 
 .waitlist-img img {
@@ -384,6 +367,11 @@ export default {
   background: #FFF3E7;
   padding: 3rem 0.8rem;
   flex-direction: column;
+}
+
+.waitlist-img {
+  margin: 4rem 1rem;
+  padding-right: 5.5rem;
 }
 
 .success-title {
